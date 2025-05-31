@@ -3,7 +3,13 @@
 Welcome to my personal portfolio website!  
 This site is built with **HTML, CSS, and JavaScript** to showcase my frontend skills, projects, and resume. While the portfolio’s contact form uses **Formspree** for messaging, I am a passionate **Java Full Stack Developer** with experience in both backend and frontend technologies.
 
-🌐 [Live Site](https://sam-portfolio-010.netlify.app)
+## 🚀 Live Demo
+
+🎯 **Experience the Portfolio Live:**  
+[![Visit Portfolio](https://img.shields.io/badge/-Click%20to%20View%20Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://sam-portfolio-010.netlify.app)
+
+🌐 **URL:** [https://sam-portfolio-010.netlify.app](https://sam-portfolio-010.netlify.app)
+
 
 ---
 
