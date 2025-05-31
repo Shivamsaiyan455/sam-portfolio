@@ -1371,6 +1371,28 @@ header ul li a {
     font-size: 18px;
   }
 }
+.hero-info h1 {
+    position: relative;
+    z-index: 3;
+    margin-top: 80px; /* Adjust to push the text down */
+}
+
+.gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+.hero-btn {
+    position: relative;
+    z-index: 5;
+    touch-action: auto;
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 
