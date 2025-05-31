@@ -1340,6 +1340,38 @@ header ul li a {
 .hero-info .hero-btn:hover {
   background-color: rgba(34, 0, 73, 0.5);
 }
+@media screen and (max-width: 768px) {
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    gap: 10px; /* Adds space between buttons */
+  }
+
+  .hero-btn {
+    width: 80%; /* Make buttons more mobile-friendly */
+    padding: 12px 30px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-info {
+    position: relative; 
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-info h1 {
+    font-size: 40px; /* Adjust font size for mobile */
+    line-height: 50px;
+  }
+
+  .hero-info p {
+    font-size: 18px;
+  }
+}
+
 
 
 
