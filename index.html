@@ -54,10 +54,11 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-vid-box">
-                <video autoplay loop muted plays-inline src="videos/hero-video.mp4"></video>
-            </div>
-            <div class="scroll-down"></div>
+           <div class="hero-vid-box">
+    <video autoplay loop muted playsinline src="videos/hero-video.mp4"></video>
+</div>
+<div class="scroll-down"></div>
+
         </section>
 
         <section class="info-section" id="info">
@@ -175,24 +176,30 @@
             </div>
         </section>
 
-        <section class="contact-section" id="contact">
-            <h1 class="section-title autoDisplay">Let's talk 😊</h1>
-            <form class="contact-box glass" id="contactForm" action="https://formspree.io/f/xeokjgrl" method="POST">
-                <label for="fullName">Full Name</label>
-                <input id="fullName" name="fullName" placeholder="Your full name" type="text" required>
+       <section class="contact-section" id="contact">
+  <h1 class="section-title autoDisplay">Let's talk 😊</h1>
+  
+  <form class="contact-box glass" id="contactForm" 
+        action="https://formspree.io/f/xeokjgrl" method="POST">
+      
+      <label for="fullName">Full Name</label>
+      <input id="fullName" name="fullName" placeholder="Your full name" type="text" required>
 
-                <label for="email">Email Address</label>
-                <input id="email" name="email" placeholder="Your email" type="email" required>
+      <label for="email">Email Address</label>
+      <input id="email" name="email" placeholder="Your email" type="email" required>
 
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" placeholder="Share your thoughts..." required></textarea>
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Share your thoughts..." required></textarea>
 
-                <button type="submit" id="submitBtn">
-                    <span>Send Message</span> <i class='bx bx-mail-send'></i>
-                </button>
-            </form>
-            <div id="formMessage" style="margin-top: 10px; color: green;"></div>
-        </section>
+      <button type="submit" id="submitBtn">
+          <span>Send Message</span> <i class='bx bx-mail-send'></i>
+      </button>
+  </form>
+
+  <!-- Message box -->
+  <div id="formMessage"></div>
+</section>
+
 
         <section class="footer">
             <h1>©️2025, Made with ❤️ by SamCode</h1>
@@ -206,6 +213,8 @@
 
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="form-handler.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize AOS animations

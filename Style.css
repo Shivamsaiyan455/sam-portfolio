@@ -1296,4 +1296,25 @@ header ul li a {
     .footer h1 {
         font-size: 1rem;
     }
+}#formMessage {
+  margin-top: 12px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none; /* hidden by default */
+}
+
+#formMessage.success {
+  display: inline-block;
+  color: #0f5132;
+  background: #d1e7dd;
+  border: 1px solid #badbcc;
+}
+
+#formMessage.error {
+  display: inline-block;
+  color: #842029;
+  background: #f8d7da;
+  border: 1px solid #f5c2c7;
 }

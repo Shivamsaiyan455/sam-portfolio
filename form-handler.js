@@ -1,59 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const messageBox = document.getElementById('formMessage');
+// js/form-handler.js
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const messageBox = document.getElementById("formMessage");
 
-  if (!form || !submitBtn) return;
+  if (!form) return;
 
-  form.reset();
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault(); // ⛔ stop redirect
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const emailInput = document.getElementById('email');
-    const emailValue = emailInput.value.trim();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailValue)) {
-      alert('Please enter a valid email address.');
-      emailInput.focus();
-      return;
-    }
-
+    // Disable button while sending
     submitBtn.disabled = true;
-    const span = submitBtn.querySelector('span');
-    if (span) span.textContent = 'Sending...';
+    const span = submitBtn.querySelector("span");
+    if (span) span.textContent = "Sending...";
+    messageBox.textContent = "";
+    messageBox.className = "";
 
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
       if (response.ok) {
         form.reset();
-        if (messageBox) {
-          messageBox.textContent = '✅ Thank you! Your message has been sent.';
-        } else {
-          alert('Thank you! Your message has been sent.');
-        }
+        messageBox.textContent = "✅ Thank you! Your message has been sent.";
+        messageBox.className = "success";
       } else {
-        response.json().then(data => {
-          const errorMsg = data.error || 'Oops! There was a problem submitting your form.';
-          alert(errorMsg);
-        }).catch(() => {
-          alert('Oops! There was a problem submitting your form.');
-        });
+        messageBox.textContent = "❌ Oops! Something went wrong.";
+        messageBox.className = "error";
       }
-    })
-    .catch(() => {
-      alert('Oops! There was a problem submitting your form.');
-    })
-    .finally(() => {
+    } catch (error) {
+      messageBox.textContent = "⚠️ Network error. Please try again.";
+      messageBox.className = "error";
+    } finally {
       submitBtn.disabled = false;
-      if (span) span.textContent = 'Send Message';
-    });
+      if (span) span.textContent = "Send Message";
+    }
   });
 });
